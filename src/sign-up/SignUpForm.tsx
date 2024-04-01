@@ -1,4 +1,7 @@
+import Button from '@mui/material/Button';
 import React, { useState } from 'react';
+import { Container } from "@mui/system";
+import { TextField, Typography } from '@mui/material';
 
 interface SignUpFormState {
     username: string;
@@ -21,44 +24,65 @@ const SignUpForm: React.FC = () => {
     };
 
     const handleSubmit = (e: React.FormEvent) => {
+        console.log("Submit was pressed")
         console.log(formData);
     }
 
     return (
-        <div>
-            <h2>Sign Up</h2>
-            <div>
-                <label htmlFor="username">Username</label>
-                <input
-                  type="text"
-                  id="username"
-                  name="username"
-                  value={formData.username}
-                  onChange={handleChange}
-                />
-            </div>
-            <div>
-                <label  htmlFor="email">E-mail</label>
-                <input
-                  type="text"
+        <Container component="main" maxWidth="xs">
+            <Typography component="h1" variant="h5">
+                Sign Up
+            </Typography>
+            <form noValidate onSubmit={handleSubmit}>
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
                   id="email"
+                  label="Email Address"
                   name="email"
+                  autoFocus
                   value={formData.email}
                   onChange={handleChange}
                 />
-            </div>
-            <div>
-                <label htmlFor="password">Password</label>
-                <input 
-                   type="password"
-                   id="password"
-                   name="password"
-                   value={formData.password}
-                   onChange={handleChange}
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="username"
+                  label="Username"
+                  name="username"
+                  autoFocus
+                  value={formData.username}
+                  onChange={handleChange}
                 />
-            </div>
-            <button onClick={handleSubmit}>Submit</button>
-        </div>
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="password"
+                  label="Password"
+                  name="password"
+                  type="password"
+                  autoFocus
+                  value={formData.password}
+                  autoComplete="current-password"
+                  onChange={handleChange}
+                />
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"  
+                >
+                  Submit
+                </Button>
+
+            </form>
+        </Container>
     )
 }
 

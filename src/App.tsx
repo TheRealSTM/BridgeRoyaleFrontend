@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignUpForm from './sign-up/SignUpForm';
+
 
 function App() {
   return (
@@ -10,7 +11,11 @@ function App() {
         <h1>Welcome to Bridge Royale</h1>
       </header>
       <main>
-        <SignUpForm />
+        <Router>
+          <Routes>
+            <Route path="/sign-up" element={<SignUpForm />} />
+          </Routes>
+        </Router>     
       </main>
     </div>
   );
