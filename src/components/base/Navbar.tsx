@@ -6,9 +6,11 @@ const Navbar = () => {
     return (
         <AppBar position="static">
             <Toolbar>
-                <Typography variant="h6" style={{ flexGrow: 1 }}>
-                  Bridge Royale
-                </Typography>
+                <Link to="/" style={{ flexGrow: 1, color: 'inherit', textDecoration: 'none' }}>
+                  <Typography variant="h6">
+                    Bridge Royale
+                  </Typography>
+                </Link>
                 <Button color="inherit" component={Link} to="/signup">Sign-up</Button>
                 <Button color="inherit" component={Link} to="/login">Login</Button>
             </Toolbar>

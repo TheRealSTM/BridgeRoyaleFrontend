@@ -33,7 +33,7 @@ const SignUpForm: React.FC = () => {
             <Typography component="h1" variant="h5">
                 Sign Up
             </Typography>
-            <form noValidate onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <TextField
                   variant="outlined"
                   margin="normal"
