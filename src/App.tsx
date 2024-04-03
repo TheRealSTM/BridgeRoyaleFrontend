@@ -6,6 +6,7 @@ import LandingPage from './components/base/LandPage';
 import Navbar from './components/base/Navbar';
 import Login from './components/sign-up/Login'
 import Profile from './components/profile/profile';
+import TableTopGame from './components/game-platform/table-top';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signup" element={<SignUpForm />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/play" element={<TableTopGame />} />
       </Routes>
     </Router>     
 );
